@@ -15,7 +15,6 @@ function App(props) {
       <Switch>  {/**Switch可防止下面16、17被重复渲染两次 */}
         <Route path="/h" component={Home} exact></Route>  {/**exact可防止/h路径与其他路径重复，即只有'/h'才被匹配到 */}
         <Route path="/home2" component={Home2}></Route>
-        <Route path="/home2" component={Home2}></Route>
         <Redirect from="/" to="/home" component={Home}></Redirect>
       </Switch>
       <br/>

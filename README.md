@@ -68,14 +68,15 @@ props.history.push("/xxx")
 接收：组件通过： this.props.math.params.id 接收
 优点：刷新仍存在
 缺点：只能传字符串，且不利于参数多的情况
-
 - query方式
 引用：<NavLink to={ { pathname:'/xxx/2', query: {name: 'Sharry'} } } />
 接收：通过this.props.location.query.xxx获取
 优点：不需要在<Router>去定义，可对象
 
 
-### Hook
+
+
+## 5. Hook
 作用：让无状态组件可以使用状态，React中状态的管理必不可少，以前需要使用类组件或者redux等管理
 类组件：
 class App extends React.Component{
@@ -91,3 +92,24 @@ function App() {
 useState是定义状态，与类组件不同，它返回的是数组，
 第一个参数为当前状态值，第二个为对象表面用于更改状态的函数（类似于setState）
 eg： NoState.js中
+
+
+
+## 6. Redux--纯粹的状态管理系统   [Vuex吸收了Redux的思想]
+js 提供的一个可预测性（给一个固定的输入，则必定可等到一个结果）的状态管理
+redux 是一个专门的状态管理库 （vue等也可以使用，但react比较多）
+
+### 使用场景： 
+1. 多个组件的状态需要共享，
+2. 一个组件需要改变另一个组件的状态时
+3. 组件中的状态 需要再任何地方可以拿到
+
+### 三大原则：
+1. 单一数据源 整个react中的状态都会被统一管理
+2. state只读
+3. 使用纯函数来修改：action
+
+
+## Hooks和Redux
+任何时候你都可以使用Redux 来管理状态，只要你喜欢。
+但是如果你的应用足够简单，只包含单个视图，需要一个地方临时保存状态，不需要和其他组件共享数据，或者甚至都没有异步I/O都没有(有也无所谓)。 这时候就到Hooks大显身手了，这些情景下用Redux, 当然也可以，不过这种做法叫用牛刀杀鸡鸡。
